@@ -16,6 +16,8 @@ function handleExpenses() {
 
     if (expenseAmount < 1 || expenseName === '') {
         alert("Missing Name or Expense amount is not above $1")
+    } else if (expenseName.length > 25 || expenseAmount.length > 9 ) {
+        alert("Name cannot be longer than 20 charcter or Amount cannot be longer than 9 digits")
     } else {
         idNum = idNum + 1
 
