@@ -1,46 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="box1">
-        <div class="title"></div>
-        <div class="split">
-                <div class="live-btn"></div>
-                <div class="messages-btn"></div>
+    <header>
+        <h1 class="header">Expense Tracker</h1>
+    </header>
+    <main>
+        <div class="funds-container">
+            <div class="funds total-expenses">
+                <h3>Total Expense</h3>
+                <h1 class="total">0</h1>
+            </div>
+            <div class="funds remaining-balance">
+                <h3>Remaning Balance</h3>
+                <h1>0</h1>
+            </div>
+            <div class="funds budget">
+                <h3>Budget</h3>
+                <h1 id="budgetAmount">0</h1>
+            </div>
         </div>
-    </div>
-
-    <div class="box2">
-        <div class="left">
-            <div class="text1"></div>
-            <div class="text2"></div>
-            <div class="new-btn"></div>
+        <div class="input-field">
+            <div class="top-section">
+                <input class="input" id="name" type="text" placeholder="Expense name">
+                <input class="input" id="amount" type="number" placeholder="Amount" maxlength="2">
+            </div>
+            <div class="bottom-section">
+                <input class="input bottom-input" id="expense" type="text" placeholder="Enter expense...">
+                <input class="expense-button" onclick="handleExpenses()" type="button" value="+ Add Expense">
+            </div>
         </div>
-        <div class="right"></div>
-    </div>
-
-    <div class="box2-x">
-        <div class="left-x">
-            <div class="text1-x"></div>
-            <div class="text2-x"></div>
-            <div class="new-btn-x"></div>
-        </div>
-        <div class="right-x"></div>
-    </div>
-
-    <div class="box3">
-        <div class="top-box"></div>
-        <div class="bottom-box">
-            <div class="img-box"></div>
-            <div class="img-box"></div>
-            <div class="img-box"></div>
-        </div>
-    </div>
-
+        <!-- Table -->
+        <div class="table-container">
+            <div class="table-head">
+                <h3 class="sub-title">Expense List</h3>
+            </div>
+            <div class="table-body" id="container">
+                <div class="table-row" id="row">
+                    <div class="nameCol baseCol" id="displayExpenseName"></div>
+                    <div class="amountCol baseCol" id="displayExpenseAmount"></div>
+                    <div class="deleteCol baseCol"><input class="deleteBtn" type="button" value="delete"></div>
+                </div>
+            </div>
+            <div class="expenseTotal-row">
+                <div class="total-text baseCol">Total:</div>
+                <div class="total-amount baseCol total">$0</div>
+            </div>
+            <!-- Table -->
+            <p class="text">Remaining Budget:</p>
+            <div class="budget-bar">
+                <div class="progress-bar"></div>
+            </div>
+    </main>
+    <script src="script.js"></script>
 </body>
+
 </html>
